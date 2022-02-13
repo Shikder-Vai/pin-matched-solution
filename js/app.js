@@ -35,13 +35,15 @@ document.getElementById("key-pad").addEventListener("click", function (event) {
 function varifyPin() {
   const displayKey = document.getElementById("display-key");
   const inputField = displayKey.value;
-  const showPin = document.getElementById("show-pin").value;
+  const showPin = document.getElementById("show-pin");
+  const pinInput = showPin.value;
   const successed = document.getElementById("success-massage");
   const faild = document.getElementById("fail-massage");
-  if (showPin == inputField) {
+  if (pinInput == inputField) {
     successed.style.display = "block";
     faild.style.display = "none";
     displayKey.value = "";
+    showPin.value = "";
   } else {
     faild.style.display = "block";
     successed.style.display = "none";
